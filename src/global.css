@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,700');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Barlow', sans-serif;
+}
+#root {
+  height: 100%;
+}
+
+/** HAMBURGUER **/
+.hamburguer span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #FE8A84;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 250ms ease-in-out;
+}
+
+.hamburguer span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburguer span:nth-child(2),
+.hamburguer span:nth-child(3) {
+    top: 50%;
+    margin-top: -1px;
+}
+
+.hamburguer span:nth-child(4) {
+    top: 100%;
+    margin-top: -1px
+}
+
+.hamburguer.open span:nth-child(1) {
+    top: 50%;
+    width: 0%;
+    left: 50%;
+    margin-top: -1px;
+}
+
+.hamburguer.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.hamburguer.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.hamburguer.open span:nth-child(4) {
+    top: 50%;
+    width: 0%;
+    left: 50%;
+    margin-top: -1px;
+}
+/** /HAMBURGUER **/
