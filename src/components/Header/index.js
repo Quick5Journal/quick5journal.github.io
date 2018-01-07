@@ -34,6 +34,7 @@ const Total = styled.button`
   border-radius: 3px;
   padding: 4px 15px;
   outline: none;
+  transition: all .2s;
   margin-right: 20px;
     span {
         &:first-child {
@@ -50,6 +51,9 @@ const Total = styled.button`
     &:active {
       transform: translate(0px, 5px);
       box-shadow: 0px 1px 0px 0px;
+    }
+    &:hover {
+        background: #8898f6;
     }
 `
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import Header from '../../components/Header'
 import Hamburguer from '../../components/Hamburguer'
-import MyProgress from '../../components/MyProgress'
+import Prompt from '../../components/Prompt'
 import Actions from '../../components/Actions'
 
 const Container = styled.div`
@@ -13,7 +14,6 @@ const Container = styled.div`
 export default () => (
   <Container>
     <Hamburguer />
-    <Actions/>
-    <MyProgress/>
+    <Prompt/>
   </Container>
 )

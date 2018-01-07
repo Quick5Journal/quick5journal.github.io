@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import iconJournal from './journal.svg'
 import iconDay from './day-icon.svg'
@@ -41,7 +42,7 @@ const Icon = styled.img`
   transform: translate(-50%, -50%);
 `
 
-const Description = styled.a`
+const Description = styled(Link)`
   margin: 14px 0 0 0;
   text-decoration: none;
   cursor: pointer;
@@ -58,19 +59,19 @@ export default () => (
         <Circle>
             <Icon src={iconJournal}/>
         </Circle>
-        <Description>My 5 minutes</Description>
+        <Description to="/myjournal">My 5 minutes</Description>
       </Item>
       <Item>
         <Circle>
           <Icon src={iconJournalOld}/>
         </Circle>
-        <Description>Timeline</Description>
+        <Description to="timeline">Timeline</Description>
       </Item>
       <Item>
         <Circle>
           <Icon src={iconDay}/>
         </Circle>
-        <Description>Quote of day</Description>
+        <Description to="quote">Quote of day</Description>
       </Item>
     </Items>
   </Menu>
