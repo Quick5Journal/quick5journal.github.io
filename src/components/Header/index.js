@@ -22,14 +22,18 @@ const Description = styled.p`
   }
 `
 
-const Total = styled.div`
+const Total = styled.button`
   text-align: center;
   margin-top: 3px;
+  border: none;
+  cursor: pointer;
   font-size: 18px;
   color: #FFF;
   background: #8495fe;
+  box-shadow: 0px 5px 0px 0px #788aff;
   border-radius: 3px;
   padding: 4px 15px;
+  outline: none;
   margin-right: 20px;
     span {
         &:first-child {
@@ -42,6 +46,10 @@ const Total = styled.div`
         font-size: 17px;
         font-weight: bold;
         text-transform: uppercase;
+    }
+    &:active {
+      transform: translate(0px, 5px);
+      box-shadow: 0px 1px 0px 0px;
     }
 `
 
