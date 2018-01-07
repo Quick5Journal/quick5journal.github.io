@@ -17,6 +17,9 @@ const Description = styled.p`
   span {
     font-weight: bold
   }
+  @media(min-width: 600px){
+    margin-bottom: 65px;
+  }
 `
 
 const Total = styled.div`
@@ -44,6 +47,9 @@ const Total = styled.div`
 
 const StatusContainer = styled.div`
     display: flex;
+    @media(min-width: 600px){
+      justify-content: center;
+    }
 `
 
 const Status = () => (

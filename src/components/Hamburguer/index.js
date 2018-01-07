@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 const Container = styled.div`
     width: 40px;
     height: 30px;
@@ -13,7 +12,7 @@ const Container = styled.div`
 
 export default () => (
     <Container>
-      <div class="hamburguer">
+      <div className="hamburguer">
         <span></span>
         <span></span>
         <span></span>

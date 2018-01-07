@@ -16,6 +16,8 @@ const Items = styled.ul`
   display: flex;
   list-style: none;
   justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
 `
 
 const Item = styled.li`
@@ -26,6 +28,7 @@ const Circle = styled.div`
   border-radius: 100%;
   background: #FFF;
   position: relative;
+  margin-bottom: 10px;
   width: 80px;
   height: 80px;
 `
@@ -38,10 +41,14 @@ const Icon = styled.img`
   transform: translate(-50%, -50%);
 `
 
-const Description = styled.p`
+const Description = styled.a`
   margin: 14px 0 0 0;
+  text-decoration: none;
+  cursor: pointer;
   color: #FFF;
   font-weight: bold;
+  border-bottom: 2px solid #FFF;
+  padding-bottom: 5px;
 `
 
 export default () => (
