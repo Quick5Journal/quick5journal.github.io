@@ -6,8 +6,9 @@ import iconSmile from './happy-emoji.svg'
 const Container = styled.div`
   width: 250px;
   height: 250px;
-  margin: 220px auto 0 auto;
-  transform: translateY(-50%);
+  margin: 70px auto 0 auto;
+  cursor: pointer;
+  position: relative;
 `
 const Description = styled.p`
   position: absolute;
