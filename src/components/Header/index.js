@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const Header = styled.header`
   background: #FFF;
-  height: calc(20% - 20px);
   padding: 20px;
   border: 2px solid #FE8A84;
 `
@@ -11,12 +10,60 @@ const Header = styled.header`
 const Description = styled.p`
   margin: 0;
   color: #FE8A84;
-  font-size: 30px;
+  font-size: 23px;
   text-align: left;
+  line-height: 0.4;
+  margin-bottom: 25px;
+  span {
+    font-weight: bold
+  }
 `
+
+const Total = styled.div`
+  text-align: center;
+  margin-top: 3px;
+  font-size: 18px;
+  color: #FFF;
+  background: #8495fe;
+  border-radius: 3px;
+  padding: 4px 15px;
+  margin-right: 20px;
+    span {
+        &:first-child {
+            font-size: 19px;
+            margin-right: 2px;
+        }
+    }
+    p {
+        margin: 0;
+        font-size: 17px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+`
+
+const StatusContainer = styled.div`
+    display: flex;
+`
+
+const Status = () => (
+    <StatusContainer>
+        <Total>
+            <span>255</span>
+            <span>days</span>
+            <p>Total</p>
+        </Total>
+        <Total>
+            <span>5</span>
+            <span>days</span>
+            <p>January</p>
+        </Total>
+    </StatusContainer>
+)
 
 export default () => (
   <Header>
-    <Description>Hello Victor,<br/>congratulations</Description>
+    <Description>my<span>5Minutes</span></Description>
+    <Status />
   </Header>
 )
