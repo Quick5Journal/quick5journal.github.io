@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Input from '../Input'
 
 const Container = styled.div`
   padding-top: 40px;
@@ -7,19 +8,6 @@ const Container = styled.div`
 
 const Section = styled.section`
 
-`
-
-const Input = styled.input`
-  width: 80%;
-  height: 40px;
-  border: none;
-  font-size: 22px;
-  background: none;
-  margin: 0 auto 40px auto;
-  border-bottom: 3px solid white;
-  &::placeholder {
-    color: #FFF;
-  }
 `
 
 const QuestionContainer = styled.div`
@@ -47,18 +35,24 @@ const Submit = styled.button`
 `
 
 
-export default () => (
+export default ({ questions, onChangeAnswer }) => (
   <Container>
-    <Section>
-      <QuestionContainer>
-        <Question>I am grateful for...</Question>
-      </QuestionContainer>
-    <div>
-      <Input type="text" placeholder="Lorem ipsum asme"></Input>
-      <Input type="text" placeholder="Lorem ipsum asme"></Input>
-      <Input type="text" placeholder="Lorem ipsum asme"></Input>
-    </div>
-    <Submit>Submit</Submit>
-    </Section>
+    { questions.map( question => (
+        <Section key={question.id}>
+          <QuestionContainer>
+          <Question>{ question.name }</Question>
+          </QuestionContainer>
+          <div>
+            { question.answers.map(answer => (
+            <Input
+              key={answer.id}
+              type="text"
+              question={question.name}
+              placeholder={answer.example}></Input>))
+            }
+          </div>
+        <Submit>Next</Submit>
+        </Section>))
+    }
   </Container>
 )
