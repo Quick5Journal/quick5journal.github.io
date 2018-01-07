@@ -22,6 +22,7 @@ const InputStyled = styled.textarea`
 const Container = styled.div`
   transition: all .3s;
   opacity: 0;
+  z-index: 2;
   visibility: hidden;
   position: fixed;
   background: #03a9f4;
@@ -64,7 +65,7 @@ const IconSun = styled.img`
   height: 60px;
 `
 const Close = styled.img`
-  position: absolute;
+  position: fixed;
   top: 0;
   cursor: pointer;
   right: 0;
@@ -72,7 +73,7 @@ const Close = styled.img`
   height: 50px;
 `
 
-const Next = styled.button`
+const Save = styled.button`
   width: 100px;
   height: 40px;
   font-size: 16px;
@@ -112,7 +113,7 @@ export default class Input extends Component {
           <IconSun src={iconSun}/>
           <Question> { this.props.question }</Question>
           <FullInput innerRef={(inputf) => { this.focusInput = inputf }} {...this.props}/>
-          <Next>Next</Next>
+          <Save>Save</Save>
         </Container>
 
         <InputStyled

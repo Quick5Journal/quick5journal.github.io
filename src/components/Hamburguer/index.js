@@ -8,10 +8,13 @@ const Container = styled.div`
     top: 20px;
     right: 20px;
     cursor: pointer;
+    .hamburguer span {
+      background: ${props => props.color ? props.color : ''}
+    }
 `
 
-export default () => (
-    <Container>
+export default (props) => (
+    <Container {...props}>
       <div className="hamburguer">
         <span></span>
         <span></span>

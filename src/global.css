@@ -76,4 +76,19 @@ body, html {
         transform: none;
     }
 }
+
+@keyframes cloud {
+	  0% {
+		    transform: translateX(0);
+	  }
+
+	  50% {
+		    transform: translateX(400px);
+	  }
+
+	  100% {
+		    transform: translateX(0);
+	  }
+}
+
 /** /ANIMATIONS **/

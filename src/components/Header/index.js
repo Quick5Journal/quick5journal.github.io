@@ -13,7 +13,7 @@ const Description = styled.p`
   font-size: 23px;
   text-align: left;
   line-height: 0.4;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   span {
     font-weight: bold
   }
@@ -32,10 +32,13 @@ const Total = styled.button`
   background: #8495fe;
   box-shadow: 0px 5px 0px 0px #788aff;
   border-radius: 3px;
+  width: 100%;
   padding: 4px 15px;
   outline: none;
   transition: all .2s;
-  margin-right: 20px;
+  &:first-child {
+    margin-right: 20px;
+  }
     span {
         &:first-child {
             font-size: 19px;
@@ -59,8 +62,10 @@ const Total = styled.button`
 
 const StatusContainer = styled.div`
     display: flex;
+    justify-content: space-between;
     @media(min-width: 600px){
-      justify-content: center;
+        max-width: 500px;
+        margin: 0 auto;
     }
 `
 

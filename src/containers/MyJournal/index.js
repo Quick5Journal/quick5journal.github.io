@@ -6,7 +6,6 @@ import Prompt from '../../components/Prompt'
 import Actions from '../../components/Actions'
 
 const Container = styled.div`
-  background: linear-gradient(#8495FE, #C7B0F9);
   height: 100%;
   text-align: center;
 `
@@ -29,6 +28,20 @@ export default class MyJournal extends Component {
               example: 'Lorem Ipsum asnm',
             }
           ]
+        },
+        {
+          id: 'k83j',
+          name: 'What would today great?',
+          answers: [
+            { id:'321',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
+            },
+            { id:'3243',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
+            }
+          ]
         }
       ]
     }
@@ -37,7 +50,7 @@ export default class MyJournal extends Component {
   render(){
     return (
       <Container>
-        <Hamburguer />
+        <Hamburguer color="#FFF" />
         <Prompt handleQuestionFocus={this.handleQuestionFocus}
                 questions={this.state.questions}/>
       </Container>
