@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Burst Mode</title>
+  <desc>A line styled icon from Orion Icon Library.</desc>
+  <path data-name="layer2"
+  fill="none" stroke="#e97d77" stroke-miterlimit="10" stroke-width="2" d="M10 42H2V6h44v8"
+  stroke-linejoin="miter" stroke-linecap="round"></path>
+  <path data-name="layer2" fill="none" stroke="#e97d77" stroke-miterlimit="10"
+  stroke-width="2" d="M18 50h-8V14h44v8" stroke-linejoin="miter" stroke-linecap="round"></path>
+  <path data-name="layer1" fill="none" stroke="#e97d77" stroke-miterlimit="10"
+  stroke-width="2" d="M18 22h44v36H18z" stroke-linejoin="miter" stroke-linecap="round"></path>
+</svg>
