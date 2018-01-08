@@ -6,6 +6,7 @@ const Container = styled.div`
     height: 30px;
     position: absolute;
     top: 20px;
+    z-index: 10;
     right: 20px;
     cursor: pointer;
     .hamburguer span {

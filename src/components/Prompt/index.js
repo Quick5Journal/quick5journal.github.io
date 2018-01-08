@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import Input from '../Input'
 import iconCloud from './cloud-icon.svg'
 import iconSun from './sun-icon.svg'
 import iconLike from './like-icon.svg'
 import iconMoon from './moon-icon.svg'
 import iconStar from './star-icon.svg'
+import iconBack from './back-icon.svg'
 
 const Container = styled.div`
   height: 100%;
@@ -86,12 +88,23 @@ const Question = styled.h4`
   }
 `
 
+const Back = styled.img`
+  position: absolute;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  top: 13px;
+  left: 20px;
+  z-index: 10;
+`
+
 const Submit = styled.button`
   border: none;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  outline: none;
   height: 60px;
   color: #FE8A84;
   font-weight: bold;
@@ -101,8 +114,6 @@ const Submit = styled.button`
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 4px;
-  opacity: ${props => props.show ? '1': '0'};
-  visibility: ${props => props.show ? 'visible': 'hidden'};
   transition: all .3s;
   &:hover {
     background: #FE8A84;
@@ -112,6 +123,10 @@ const Submit = styled.button`
 
 export default ({ questions, onChangeAnswer, isSomeAsnwered }) => (
   <Container>
+    <Link to="/">
+      <Back src={iconBack} />
+    </Link>
+    <div>
     { questions.map( question => (
         <Section key={question.id}>
           <QuestionContainer>
@@ -127,8 +142,10 @@ export default ({ questions, onChangeAnswer, isSomeAsnwered }) => (
               placeholder={answer.example}></Input>))
             }
           </div>
-        </Section>))
+        </Section>
+      ))
     }
-    <Submit show={isSomeAsnwered}>Save</Submit>
+    </div>
+    <Submit>Save</Submit>
   </Container>
 )

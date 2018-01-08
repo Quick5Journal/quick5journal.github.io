@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Circle } from 'rc-progress';
-import iconSmile from './happy-emoji.svg'
+import iconEdit from './edit-icon.svg'
 
 const Container = styled.div`
   width: 250px;
@@ -21,16 +21,16 @@ const Description = styled.p`
 `
 
 const Icon = styled.img`
-  width: 70px;
+  width: 60px;
   position: absolute;
-  left: 90px;
+  left: 100px;
   top: 59px;
 `
 
 export default ({className}) => (
   <Container className={className}>
     <Circle percent="25" strokeWidth="4" trailColor="#FFF" strokeColor="#FE8A84" />
-    <Icon src={iconSmile} />
+    <Icon src={iconEdit} />
     <Description>Click here to continue</Description>
   </Container>
 )
