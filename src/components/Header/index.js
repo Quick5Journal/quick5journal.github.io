@@ -1,5 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import iconTotal from './total-icon.svg'
+import iconTotalHover from './total-icon-hover.svg'
+import iconBook from './book-icon.svg'
+import iconBookHover from './book-icon-hover.svg'
 
 const Header = styled.header`
   background: #FFF;
@@ -7,7 +11,7 @@ const Header = styled.header`
   border: 2px solid #FE8A84;
 `
 
-const Description = styled.p`
+const Logo = styled.h1`
   margin: 0;
   color: #FE8A84;
   font-size: 23px;
@@ -15,7 +19,7 @@ const Description = styled.p`
   line-height: 0.4;
   margin-bottom: 35px;
   span {
-    font-weight: bold
+    font-weight: 400 
   }
   @media(min-width: 600px){
     margin-bottom: 35px;
@@ -23,41 +27,93 @@ const Description = styled.p`
 `
 
 const Total = styled.button`
+  position: relative;
   text-align: center;
   margin-top: 3px;
   border: none;
   cursor: pointer;
   font-size: 18px;
-  color: #FFF;
-  background: #8495fe;
-  box-shadow: 0px 5px 0px 0px #788aff;
+  color: #FE8A84;
+  background: #FFF;
+  border: 2px solid #FE8A84;
   border-radius: 3px;
   width: 100%;
   padding: 4px 15px;
   outline: none;
   transition: all .2s;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 14px;
+    top: 12px;
+  }
+
   &:first-child {
     margin-right: 20px;
-  }
-    span {
-        &:first-child {
-            font-size: 19px;
-            margin-right: 2px;
-        }
-    }
-    p {
-        margin: 0;
-        font-size: 17px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    &:active {
-      transform: translate(0px, 5px);
-      box-shadow: 0px 1px 0px 0px;
+    &:before {
+        background: url(${iconTotal}) no-repeat;
     }
     &:hover {
-        background: #8898f6;
+      &:before {
+        background-image: url(${iconTotalHover})
+      }
+      @media(max-width: 500px){
+         &:before {
+            background: none;
+         }
+      }
     }
+
+    @media(max-width: 500px){
+      &:before {
+        background: none;
+      }
+    }
+  }
+
+  &:nth-child(2){
+    &:before {
+       background: url(${iconBook}) no-repeat;
+    }
+
+    &:hover {
+      &:before {
+        background-image: url(${iconBookHover})
+      }
+      @media(max-width: 500px){
+         &:before {
+            background: none;
+         }
+      }
+    }
+    @media(max-width: 500px){
+      &:before {
+        background: none;
+      }
+    }
+  }
+
+  span {
+     font-weight: 300;
+     &:first-child {
+        font-size: 19px;
+         margin-right: 2px;
+     }
+  }
+
+ p {
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+     background: #FE8A84;
+     color: #FFF;
+  }
 `
 
 const StatusContainer = styled.div`
@@ -86,7 +142,7 @@ const Status = () => (
 
 export default () => (
   <Header>
-    <Description>my<span>5Minutes</span></Description>
+    <Logo>Quick5Journal</Logo>
     <Status />
   </Header>
 )
