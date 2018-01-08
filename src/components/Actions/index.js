@@ -59,7 +59,7 @@ export default () => (
         <Circle>
             <Icon src={iconJournal}/>
         </Circle>
-        <Description to="/myjournal">My 5 minutes</Description>
+        <Description to="/myjournal">Write</Description>
       </Item>
       <Item>
         <Circle>

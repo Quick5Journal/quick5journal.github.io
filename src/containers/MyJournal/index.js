@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Header from '../../components/Header'
 import Hamburguer from '../../components/Hamburguer'
 import Prompt from '../../components/Prompt'
-import Actions from '../../components/Actions'
 
 const Container = styled.div`
   height: 100%;
@@ -14,21 +12,22 @@ export default class MyJournal extends Component {
   constructor(){
     super()
     this.state = {
+      someAnswered: false,
       questions: [
         {
           id: '123',
           name: 'I am grateful for...',
           answers: [
             { id:'321',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             },
             { id:'3243',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             },
             { id:'lkdjsa3',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             }
           ]
@@ -38,15 +37,15 @@ export default class MyJournal extends Component {
           name: 'What would today great?',
           answers: [
             { id:'321',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             },
             { id:'3243',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             },
             { id:'39128',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             }
           ]
@@ -56,11 +55,11 @@ export default class MyJournal extends Component {
           name: 'Daily affirmation. I am...',
           answers: [
             { id:'321',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             },
             { id:'39128',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             }
           ]
@@ -70,15 +69,15 @@ export default class MyJournal extends Component {
           name: '3 Amazing things that happened today...',
           answers: [
             { id:'321',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             },
             { id:'39128',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             },
             { id:'kkk',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             }
           ]
@@ -88,7 +87,7 @@ export default class MyJournal extends Component {
           name: 'How could I have made today even better?',
           answers: [
             { id:'321',
-              value: 'My day yy...',
+              value: '',
               example: 'Lorem Ipsum asnm',
             }
           ]
@@ -97,11 +96,31 @@ export default class MyJournal extends Component {
     }
   }
 
+  onChangeAnswer = (questionid, answerid, newvalue) => {
+    const newQuestions = this.state.questions.map(question => {
+      if(question.id === questionid) {
+        return Object.assign(question, { answers: question.answers.map(answer => {
+          if(answer.id === answerid) {
+            return Object.assign(answer, { value: newvalue })
+          }else
+            return answer
+        })})
+      }else
+        return question
+    })
+
+    if(newvalue !== '') {
+      this.setState({ someAnswered: true })
+    }
+    this.setState({ questions: newQuestions })
+  }
+
   render(){
     return (
       <Container>
         <Hamburguer color="#FFF" />
-        <Prompt handleQuestionFocus={this.handleQuestionFocus}
+        <Prompt onChangeAnswer={this.onChangeAnswer}
+                isSomeAsnwered={this.state.someAnswered}
                 questions={this.state.questions}/>
       </Container>
     )

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import MyProgress from '../MyProgress'
 import Input from '../Input'
 import iconCloud from './cloud-icon.svg'
 import iconSun from './sun-icon.svg'
@@ -10,16 +9,6 @@ import iconStar from './star-icon.svg'
 
 const Container = styled.div`
   height: 100%;
-  .my-progress {
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    p, img {
-      display: none;
-    }
-  }
 `
 
 const Section = styled.section`
@@ -99,7 +88,7 @@ const Question = styled.h4`
 
 const Submit = styled.button`
   border: none;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -112,14 +101,16 @@ const Submit = styled.button`
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 4px;
+  opacity: ${props => props.show ? '1': '0'};
+  visibility: ${props => props.show ? 'visible': 'hidden'};
+  transition: all .3s;
+  &:hover {
+    background: #FE8A84;
+    color: #FFF;
+  }
 `
 
-const CloudIcon = styled.img`
-    width: 70px;
-    opacity: .5;
-`
-
-export default ({ questions, onChangeAnswer }) => (
+export default ({ questions, onChangeAnswer, isSomeAsnwered }) => (
   <Container>
     { questions.map( question => (
         <Section key={question.id}>
@@ -130,13 +121,14 @@ export default ({ questions, onChangeAnswer }) => (
             { question.answers.map(answer => (
             <Input
               key={answer.id}
+              value={answer.value}
               type="text"
-              question={question.name}
+              onChange={(e) => onChangeAnswer(question.id, answer.id, e.target.value)}
               placeholder={answer.example}></Input>))
             }
           </div>
         </Section>))
     }
-  <MyProgress className="my-progress" />
+    <Submit show={isSomeAsnwered}>Save</Submit>
   </Container>
 )

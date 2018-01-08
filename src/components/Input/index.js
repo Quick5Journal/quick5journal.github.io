@@ -36,6 +36,7 @@ export default class Input extends Component {
     return (
       <div>
         <InputStyled
+            onChange={this.props.onChange}
             onFocus={() => this.setState({ active: true })}
           {...this.props}/>
       </div>
