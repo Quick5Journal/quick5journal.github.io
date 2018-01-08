@@ -26,6 +26,10 @@ export default class MyJournal extends Component {
             { id:'3243',
               value: 'My day yy...',
               example: 'Lorem Ipsum asnm',
+            },
+            { id:'lkdjsa3',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
             }
           ]
         },
@@ -38,6 +42,52 @@ export default class MyJournal extends Component {
               example: 'Lorem Ipsum asnm',
             },
             { id:'3243',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
+            },
+            { id:'39128',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
+            }
+          ]
+        },
+        {
+          id: 'jjjiu',
+          name: 'Daily affirmation. I am...',
+          answers: [
+            { id:'321',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
+            },
+            { id:'39128',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
+            }
+          ]
+        },
+        {
+          id: 'aaa',
+          name: '3 Amazing things that happened today...',
+          answers: [
+            { id:'321',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
+            },
+            { id:'39128',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
+            },
+            { id:'kkk',
+              value: 'My day yy...',
+              example: 'Lorem Ipsum asnm',
+            }
+          ]
+        },
+        {
+          id: 'uuuuu',
+          name: 'How could I have made today even better?',
+          answers: [
+            { id:'321',
               value: 'My day yy...',
               example: 'Lorem Ipsum asnm',
             }

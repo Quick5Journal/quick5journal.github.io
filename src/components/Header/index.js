@@ -18,7 +18,7 @@ const Description = styled.p`
     font-weight: bold
   }
   @media(min-width: 600px){
-    margin-bottom: 65px;
+    margin-bottom: 35px;
   }
 `
 
@@ -65,7 +65,7 @@ const StatusContainer = styled.div`
     justify-content: space-between;
     @media(min-width: 600px){
         max-width: 500px;
-        margin: 0 auto;
+        margin: 0 auto ;
     }
 `
 

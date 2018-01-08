@@ -27,8 +27,8 @@ const Icon = styled.img`
   top: 59px;
 `
 
-export default () => (
-  <Container>
+export default ({className}) => (
+  <Container className={className}>
     <Circle percent="25" strokeWidth="4" trailColor="#FFF" strokeColor="#FE8A84" />
     <Icon src={iconSmile} />
     <Description>Click here to continue</Description>

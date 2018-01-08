@@ -1,25 +1,83 @@
 import React from 'react'
 import styled from 'styled-components'
+import MyProgress from '../MyProgress'
 import Input from '../Input'
 import iconCloud from './cloud-icon.svg'
+import iconSun from './sun-icon.svg'
+import iconLike from './like-icon.svg'
+import iconMoon from './moon-icon.svg'
+import iconStar from './star-icon.svg'
 
 const Container = styled.div`
   height: 100%;
+  .my-progress {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    p, img {
+      display: none;
+    }
+  }
 `
 
 const Section = styled.section`
   width: 100%;
-  height: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
   @media(min-width: 600px){
     margin: 0 auto;
   }
-
-  &:nth-child(2) {
-    background: #2196F3;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
   }
 
-  &:nth-child(3) {
-    background: #00bcd4;
+  &:nth-child(1) {
+    background: #FE8A84;
+    &:before {
+      background: url(${iconCloud}) no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(2) {
+    background: #F866AD;
+    &:before {
+      background: url(${iconSun}) no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(3){
+    background: #8D48F7;
+    &:before {
+      background: url(${iconLike}) no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(4){
+    background: #435F96;
+    &:before {
+      background: url(${iconMoon}) no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(5){
+    background: #2196f3;
+    &:before {
+      background: url(${iconStar}) no-repeat;
+      background-size: cover;
+    }
   }
 
 `
@@ -58,38 +116,27 @@ const Submit = styled.button`
 
 const CloudIcon = styled.img`
     width: 70px;
-    position: absolute;
-    left: ${props => props.x}px;
-    top: ${props => props.y}px;
     opacity: .5;
-    animation: cloud 120s ease-in-out infinite;
-
-`
-
-const Center = styled.div`
-padding-top: 100px
 `
 
 export default ({ questions, onChangeAnswer }) => (
   <Container>
-    <CloudIcon x={100} y={100} src={iconCloud} />
     { questions.map( question => (
         <Section key={question.id}>
-          <Center>
-            <QuestionContainer>
-            <Question>{ question.name }</Question>
-            </QuestionContainer>
-            <div>
-              { question.answers.map(answer => (
-              <Input
-                key={answer.id}
-                type="text"
-                question={question.name}
-                placeholder={answer.example}></Input>))
-              }
-            </div>
-          </Center>
+          <QuestionContainer>
+          <Question>{ question.name }</Question>
+          </QuestionContainer>
+          <div>
+            { question.answers.map(answer => (
+            <Input
+              key={answer.id}
+              type="text"
+              question={question.name}
+              placeholder={answer.example}></Input>))
+            }
+          </div>
         </Section>))
     }
+  <MyProgress className="my-progress" />
   </Container>
 )
