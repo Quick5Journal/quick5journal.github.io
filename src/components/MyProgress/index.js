@@ -4,10 +4,9 @@ import { Circle } from 'rc-progress';
 import iconEdit from './edit-icon.svg'
 
 const Container = styled.div`
-  width: 250px;
-  height: 250px;
-  margin: 70px auto 0 auto;
+  background: linear-gradient(#8495FE,#C7B0F9);
   cursor: pointer;
+  padding: 80px 0;
   position: relative;
 `
 const Description = styled.p`
@@ -27,10 +26,19 @@ const Icon = styled.img`
   top: 59px;
 `
 
+const Center = styled.div`
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+`
+
 export default ({className}) => (
   <Container className={className}>
-    <Circle percent="25" strokeWidth="4" trailColor="#FFF" strokeColor="#FE8A84" />
-    <Icon src={iconEdit} />
-    <Description>Click here to continue</Description>
+    <Center>
+       <Circle percent="25" strokeWidth="4" trailColor="#FFF" strokeColor="#FE8A84" />
+       <Icon src={iconEdit} />
+       <Description>Click here to continue</Description>
+     </Center>
   </Container>
 )

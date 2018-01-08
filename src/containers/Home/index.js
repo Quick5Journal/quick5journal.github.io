@@ -6,7 +6,6 @@ import Actions from '../../components/Actions'
 import Hamburguer from '../../components/Hamburguer'
 
 const Container = styled.div`
-  background: linear-gradient(#8495FE, #C7B0F9);
   height: 100%;
   text-align: center;
 `
