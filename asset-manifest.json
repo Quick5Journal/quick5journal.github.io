@@ -1,11 +1,9 @@
 {
   "main.css": "static/css/main.62be17a7.css",
   "main.css.map": "static/css/main.62be17a7.css.map",
-  "main.js": "static/js/main.b59d81c3.js",
-  "main.js.map": "static/js/main.b59d81c3.js.map",
+  "main.js": "static/js/main.5470576e.js",
+  "main.js.map": "static/js/main.5470576e.js.map",
   "static/media/back-icon.svg": "static/media/back-icon.f3c067fa.svg",
-  "static/media/book-icon-hover.svg": "static/media/book-icon-hover.58eeb231.svg",
-  "static/media/book-icon.svg": "static/media/book-icon.69be2909.svg",
   "static/media/cloud-icon.svg": "static/media/cloud-icon.b2325f28.svg",
   "static/media/day-icon.svg": "static/media/day-icon.dd2fdc15.svg",
   "static/media/edit-icon.svg": "static/media/edit-icon.579ba343.svg",
@@ -14,7 +12,5 @@
   "static/media/like-icon.svg": "static/media/like-icon.c19fc7b1.svg",
   "static/media/moon-icon.svg": "static/media/moon-icon.cdf9ad7e.svg",
   "static/media/star-icon.svg": "static/media/star-icon.bbe33b62.svg",
-  "static/media/sun-icon.svg": "static/media/sun-icon.dcca6327.svg",
-  "static/media/total-icon-hover.svg": "static/media/total-icon-hover.b7d03ba2.svg",
-  "static/media/total-icon.svg": "static/media/total-icon.356fb923.svg"
+  "static/media/sun-icon.svg": "static/media/sun-icon.dcca6327.svg"
 }
