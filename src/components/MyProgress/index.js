@@ -4,10 +4,12 @@ import { Circle } from 'rc-progress';
 import iconEdit from './edit-icon.svg'
 
 const Container = styled.div`
-  background: linear-gradient(#8495FE,#C7B0F9);
   cursor: pointer;
-  padding: 80px 0;
+  padding: 85px 0 0 0;
   position: relative;
+  @media(max-width: 320px){
+    padding-top: 43px;
+  }
 `
 const Description = styled.p`
   position: absolute;
